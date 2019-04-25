@@ -1,0 +1,28 @@
+.main-container {
+  width: 60%;
+  margin: auto;
+  background-color: #2f3941;
+  padding: 20px;
+  max-width: 700px;
+}
+.content {
+  margin: auto;
+  color: #43b324;
+  width: 50%;
+  height: 50%;
+}
+.grid-container {
+  color: #43b324;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #43b324;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: #2f3941;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
