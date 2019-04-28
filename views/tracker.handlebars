@@ -1,13 +1,15 @@
 <h1>Search for Video</h1>
 <form id="messageForm" method="post">
-  <label>Message:
+  <label>
     <textarea id="message" name="message"></textarea>
   </label>
   <br>
-  <input type="submit" value="Say it!">
+  <input type="submit" value="Search">
 </form>
 <div id="messages">
   {{#each results}}
-  <h1>{{snippet.title}}</h1>
+  <a href="tracker/watch?id={{id.videoId}}">Watch</a>
+  <h3>{{snippet.title}}</h3>
+  <p>{{snippet.description}}</p>
   {{/each}}
 </div>

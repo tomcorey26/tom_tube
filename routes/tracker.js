@@ -54,3 +54,7 @@ router.post("/", (req, res) => {
 router.get("/results", (req, res) => {
   res.json(results);
 });
+
+router.get("/watch", (req, res) => {
+  res.render("watch", { query: req.query });
+});
