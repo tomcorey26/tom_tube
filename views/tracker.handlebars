@@ -1,1 +1,14 @@
-<div>It works!!!</div>
+<h1>Search for Video</h1>
+<form id="messageForm" method="post">
+  <label>Message:
+    <textarea id="message" name="message"></textarea>
+  </label>
+  <br>
+  <input type="submit" value="Say it!">
+</form>
+<div id="messages">
+  {{searchResults}}
+  {{!-- {{#each messages}}
+  <p><strong>{{name}}:</strong> {{message}}</p>
+  {{/each}} --}}
+</div>
