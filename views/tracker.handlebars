@@ -7,8 +7,7 @@
   <input type="submit" value="Say it!">
 </form>
 <div id="messages">
-  {{searchResults}}
-  {{!-- {{#each messages}}
-  <p><strong>{{name}}:</strong> {{message}}</p>
-  {{/each}} --}}
+  {{#each results}}
+  <h1>{{snippet.title}}</h1>
+  {{/each}}
 </div>

@@ -24,9 +24,11 @@ async function runSample(searchVal) {
 }
 
 const scopes = ["https://www.googleapis.com/auth/youtube"];
-
+let results = [];
 router.get("/", (req, res) => {
-  res.render("tracker");
+  res.render("tracker", {
+    results: results
+  });
 });
 
 router.post("/", (req, res) => {
@@ -34,12 +36,21 @@ router.post("/", (req, res) => {
     let search = req.body.message;
     runSample(search)
       .then(data => {
-        console.log(data);
         res.redirect(303, req.baseUrl);
         resolve(data);
       })
       .catch(err => {
         console.log(err);
       });
+  }).then(data => {
+    results = data;
+    console.log(results);
+    return;
   });
+  results = promise;
+  console.log(results);
+});
+
+router.get("/results", (req, res) => {
+  res.json(results);
 });
