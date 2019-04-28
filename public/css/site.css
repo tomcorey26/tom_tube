@@ -1,28 +1,50 @@
+:root {
+  --main-bg-color: #c2c8cc;
+  --main-page-color: #337fbd;
+  --main-txt-color: white;
+  --color-snow: #ffffff;
+}
+
+html {
+  background-color: var(--main-bg-color);
+}
+a {
+  display: block;
+  color: var(--main-txt-color);
+  text-decoration: none;
+}
 .main-container {
   width: 60%;
   margin: auto;
-  background-color: #2f3941;
+  background-color: var(--main-page-color);
   padding: 20px;
   max-width: 700px;
 }
 .content {
   margin: auto;
-  color: #43b324;
+  color: var(--main-txt-color);
   width: 80%;
   height: 50%;
 }
 .grid-container {
-  color: #43b324;
+  color: var(--main-txt-color);
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   grid-gap: 10px;
-  background-color: #43b324;
+  background-color: var(--main-txt-color);
   padding: 10px;
 }
 
 .grid-container > div {
-  background-color: #2f3941;
+  background-color: var(--main-page-color);
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  padding: 12px 12px;
 }
