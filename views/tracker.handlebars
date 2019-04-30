@@ -13,5 +13,14 @@
   <div class="results">
     <h2 class="title">{{snippet.title}}</h2>
     <p>{{snippet.description}}</p>
-    <a class="myButton" href=" tracker/watch?id={{id.videoId}}">Watch </a>
+    <a class="myButton" href="tracker/watch?vidId={{id.videoId}}">Watch </a>
   </div> {{/each}} </div>
+
+{{#if vidId}}
+<h2>
+  Recently Watched
+</h2>
+<a class="myButton" target="_blank" href="https://www.youtube.com/watch?v={{{vidId}}}">
+  Watch
+</a>
+{{/if}}

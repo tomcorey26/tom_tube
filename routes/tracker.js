@@ -41,11 +41,9 @@ router.post("/", (req, res) => {
       });
   }).then(data => {
     results = data;
-    console.log(results);
     return;
   });
   results = promise;
-  console.log(results);
 });
 
 router.get("/results", (req, res) => {

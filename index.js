@@ -79,6 +79,19 @@ app.use(function(req, res, next) {
 
 app.use(express.static("public"));
 
+app.use((req, res, next) => {
+  if (req.query.vidId) {
+    req.session.vidId = req.query.vidId;
+  }
+  //if there is no res locals make one
+  if (!res.locals) {
+    res.locals = {};
+  }
+  //set res local equal to the name stored in the session
+  res.locals.vidId = req.session.vidId;
+  next();
+});
+
 app.get("/", function(req, res) {
   res.render("home");
 });
