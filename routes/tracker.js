@@ -18,9 +18,6 @@ async function runSample(searchVal) {
     maxResults: 3
   });
   return res.data.items;
-
-  // console.log(res.data.items[0].id.videoId);
-  // console.log(res.data.items);
 }
 
 const scopes = ["https://www.googleapis.com/auth/youtube"];
