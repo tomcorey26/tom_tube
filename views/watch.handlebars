@@ -1,6 +1,10 @@
 {{#if query.vidId}}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/{{query.vidId}}" frameborder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2>
+  {{query.title}}
+</h2>
+
 {{else}}
 <p>video not found</p>
 {{/if}}
