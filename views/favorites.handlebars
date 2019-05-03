@@ -1,1 +1,24 @@
 <h1>Favorites</h1>
+<div id="favorites">
+
+</div>
+{{#section 'jquery'}}
+<script>
+  function getFavorites() {
+    $.get('/favorites/get_data', function (data) {
+      let rdiv = $("#favorites");
+      rdiv.html('');
+      data.favorites.forEach(function (element) {
+        console.log(element)
+        rdiv.html(rdiv.html() + '<div class="results">' + '<h2>'
+          + element.title + '</h2>'
+          + '<a class="myButton" href='
+          + element.url + '">' + "Watch" + '</a>' + '</div>');
+      });
+
+    });
+  }
+  getFavorites();
+</script>
+
+{{/section}}
