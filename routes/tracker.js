@@ -21,33 +21,41 @@ async function runSample(searchVal) {
 }
 
 const scopes = ["https://www.googleapis.com/auth/youtube"];
-let results = [];
+
 router.get("/", (req, res) => {
   res.render("tracker", {
-    results: results
+    results: req.session.results || []
   });
 });
 
 router.post("/", (req, res) => {
   let promise = new Promise((resolve, reject) => {
     let search = req.body.message;
+    req.session.results = [];
     runSample(search)
       .then(data => {
-        res.redirect(303, req.baseUrl);
         resolve(data);
       })
       .catch(err => {
         console.log(err);
       });
-  }).then(data => {
-    results = data;
-    return;
-  });
-  results = promise;
-});
-
-router.get("/results", (req, res) => {
-  res.json(results);
+  })
+    .then(data => {
+      req.session.results = data;
+      // results = data;
+    })
+    .catch(err => {
+      console.error(err);
+    })
+    .finally(() => {
+      //if the request is from jquerey then send back data
+      if (req.xhr) {
+        res.json(req.session.results);
+      } else {
+        res.redirect(303, req.baseUrl);
+      }
+    });
+  // results = promise;
 });
 
 router.get("/watch", (req, res) => {
