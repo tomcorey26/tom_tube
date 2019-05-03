@@ -1,15 +1,3 @@
-// youtube upvoter
-//youtube search
-//favorite videos and save them to database
-//night mode and dark mode for session
-//side by side comparison video
-//one video is beat
-//other is person someone singing
-//can play them both at the same time
-//save your favorite video combos
-// Youtube api key: AIzaSyCD6FzSUU_m8zFtQhODOHSFDpp3Nlpgzr4
-//search for videos
-//keeps last videos you were on as
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -100,6 +88,7 @@ app.get("/", function(req, res) {
 // tracker router.
 app.use("/auth", require("./routes/auth").router);
 app.use("/tracker", ensureLoggedIn("/auth"), require("./routes/tracker"));
+app.use("/favorites", ensureLoggedIn("/auth"), require("./routes/favorites"));
 // this would work, too:
 // app.use('/talk', require('./routes/chat'));
 //Also moved let messages=[] from initialization to router.

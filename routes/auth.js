@@ -39,10 +39,8 @@ const strategy = new LocalStrategy(function(username, password, done) {
           "found user" + user.username + "passhash: " + user.passhash
         );
         if (bcrypt.compareSync(password, user.passhash)) {
-          console.log("bycrypt");
           return done(null, user);
         } else {
-          console.log("bcrypt else");
           return done(null, false);
         }
       }
@@ -75,7 +73,8 @@ router.post("/newuser", function(req, res) {
     passhash: bcrypt.hashSync(
       req.body.password,
       parseInt(process.env.AUTH_BCRYPT_COST)
-    )
+    ),
+    favorites: []
   };
 
   Promise.all([
