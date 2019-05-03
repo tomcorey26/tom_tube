@@ -2,19 +2,15 @@
   <h1>Search for Video</h1>
   <form id="messageForm" method="post">
     <label>
-      <textarea id="message" name="message"></textarea>
+      <input id="message" name="message">
     </label>
     <br>
     <input type="submit" value="Search">
   </form>
 </div>
-<div id="messages">
-  {{#each results}}
-  <div class="results">
-    <h2 class="title">{{snippet.title}}</h2>
-    <p>{{snippet.description}}</p>
-    <a class="myButton" href="tracker/watch?vidId={{id.videoId}}">Watch </a>
-  </div> {{/each}} </div>
+<div id="searchResults">
+
+</div>
 
 {{#if vidId}}
 <h2>
@@ -24,3 +20,40 @@
   Watch
 </a>
 {{/if}}
+{{!-- {{#each results}}
+  <div class="results">
+    <h2 class="title">{{snippet.title}}</h2>
+    <p>{{snippet.description}}</p>
+    <a class="myButton" href="tracker/watch?vidId={{id.videoId}}">Watch </a>
+  </div> {{/each}} --}}
+{{#section 'jquery'}}
+<script>
+  $(document).ready(function () {
+    $("p").hide();
+  });
+
+  function postResults(evt) {
+    console.log(".submit working")
+    evt.preventDefault();
+    let input = $('#message').val()
+    $.post("/tracker", { message: input }, function (data) {
+      let rdiv = $('#searchResults')
+      rdiv.html('');
+      for (result of data) {
+
+        rdiv.html(rdiv.html() + '<div class="results">' + '<h2>'
+          + result.snippet.title + '</h2>' + '<p>'
+          + result.snippet.description + '</p>'
+          + '<a class="myButton" href="tracker/watch?vidId='
+          + result.id.videoId + '">' + "Watch" + '</a>' + '</div>');
+
+      }
+    })
+  }
+
+  $(function () {
+    $('#messageForm').submit(postResults);
+  });
+
+</script>
+{{/section}}
