@@ -25,10 +25,11 @@ const MongoClient = require("mongodb")
   });
 
 router.post("/", (req, res) => {
+  let name = req.session.username;
   return new Promise((resolve, reject) => {
     MongoClient.then(() => {
       usersCollection.updateOne(
-        { username: "tom" },
+        { username: name },
         { $push: { favorites: { title: req.body.name, url: req.body.url } } }
       );
     })
@@ -45,7 +46,7 @@ router.post("/", (req, res) => {
 
 router.get("/get_data", (req, res) => {
   MongoClient.then(() => {
-    var query = { username: "tom" };
+    var query = { username: req.session.username };
     usersCollection
       .find(query)
       .toArray()

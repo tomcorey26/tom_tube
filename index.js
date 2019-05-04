@@ -71,11 +71,16 @@ app.use((req, res, next) => {
   if (req.query.vidId) {
     req.session.vidId = req.query.vidId;
   }
-  //if there is no res locals make one
+  if (req.body.username) {
+    console.log(req.body.username + "in app use");
+    req.session.username = req.body.username;
+  }
   if (!res.locals) {
+    //if there is no res locals make one
     res.locals = {};
   }
   //set res local equal to the name stored in the session
+  res.locals.username = req.session.username;
   res.locals.vidId = req.session.vidId;
   next();
 });
