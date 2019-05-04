@@ -98,6 +98,12 @@ app.use("/favorites", ensureLoggedIn("/auth"), require("./routes/favorites"));
 // app.use('/talk', require('./routes/chat'));
 //Also moved let messages=[] from initialization to router.
 
+app.get("/logout", function(req, res) {
+  req.session.username = "";
+  req.logout();
+  res.redirect("/");
+});
+
 // page not found:
 app.use((req, res) => {
   res.status(404);

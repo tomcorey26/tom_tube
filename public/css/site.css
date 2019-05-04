@@ -85,5 +85,7 @@ a {
   top: 1px;
 }
 
-.title {
+.logout {
+  float: right;
+  margin-bottom: 5%;
 }
