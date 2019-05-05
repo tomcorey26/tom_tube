@@ -6,7 +6,6 @@
       <input id="message" name="message">
     </label>
     <br>
-    <input type="submit" value="Search">
   </form>
 </div>
 <div id="searchResults">
@@ -28,10 +27,10 @@
     $("p").hide();
   });
 
-  function postResults(evt) {
+  function postResults() {
     console.log(".submit working")
-    evt.preventDefault();
     let input = $('#message').val()
+
     $.post("/tracker", { message: input }, function (data) {
       let rdiv = $('#searchResults')
       rdiv.html('');
@@ -43,13 +42,22 @@
           + '<a class="myButton" href="tracker/watch?vidId='
           + result.id.videoId + '&title=' + result.snippet.title + '">' + "Watch" + '</a>' + '</div>');
 
-
       }
     })
   }
 
   $(function () {
-    $('#messageForm').submit(postResults);
+    console.log("fart begin")
+    $("#message").on('change textInput input', function () {
+      console.log("fart 1")
+      var val = $(this).val().trim();
+      val = val.replace(/\s+/g, '');
+      console.log(val);
+      if (val.length >= 3) { //for checking 3 characters
+        console.log("fart 2")
+        postResults();
+      }
+    });
   });
 
 </script>
