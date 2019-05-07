@@ -47,14 +47,11 @@
   }
 
   $(function () {
-    console.log("fart begin")
     $("#message").on('change textInput input', function () {
-      console.log("fart 1")
       var val = $(this).val().trim();
       val = val.replace(/\s+/g, '');
       console.log(val);
       if (val.length >= 3) { //for checking 3 characters
-        console.log("fart 2")
         postResults();
       }
     });

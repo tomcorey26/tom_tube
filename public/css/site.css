@@ -63,6 +63,7 @@ a {
 }
 
 .myButton {
+  margin-top: 5px;
   background-color: #44c767;
   -moz-border-radius: 28px;
   -webkit-border-radius: 28px;
