@@ -15,7 +15,7 @@ npm i
 * Searches query Youtubes Api and returns the top three results
 * Search page dynamically updates search reults using jquery
 * Select from search and watch videos on tom tube
-* Favorite videos, and revist them on favorites page (stored in mongodb database)
+* Favorite videos, and revisit them on favorites page (stored in mongodb database)
 
 
 
