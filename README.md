@@ -11,8 +11,11 @@ npm i
 
 ## Using the app
 
-You first have to create an account and then log in. You can make searches that update the page dynamically with youtube
-search results. Select result and watch the video on tomtube via an embedded iframe. Can favorite videos. Favorite videos
-are stored in a db and can be viewed on the /favorites page.
+Create account and search for youtube videos.
+Searches query Youtubes Api and returns the top three results
+Search page dynamically updates search reults using jquery
+Select from search and watch videos on tom tube
+Favorite videos, and revist them on favorites page (stored in mongodb database)
+
 
 
