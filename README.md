@@ -11,11 +11,11 @@ npm i
 
 ## Using the app
 
-⋅⋅* Create account and search for youtube videos.
-⋅⋅* Searches query Youtubes Api and returns the top three results
-⋅⋅* Search page dynamically updates search reults using jquery
-⋅⋅* Select from search and watch videos on tom tube
-⋅⋅* Favorite videos, and revist them on favorites page (stored in mongodb database)
+* Create account and search for youtube videos.
+* Searches query Youtubes Api and returns the top three results
+* Search page dynamically updates search reults using jquery
+* Select from search and watch videos on tom tube
+* Favorite videos, and revist them on favorites page (stored in mongodb database)
 
 
 
