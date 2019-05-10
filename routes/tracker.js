@@ -6,7 +6,7 @@ const { google } = require("googleapis");
 
 const youtube = google.youtube({
   version: "v3",
-  auth: "AIzaSyA-EHLvPYpJehvaHkrDmfIr21A0cUWtX6A"
+  auth: ""
 });
 
 // a very simple example of searching for youtube videos
