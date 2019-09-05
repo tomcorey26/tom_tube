@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
+require("dotenv").config();
 module.exports = router;
 ("use strict");
 const { google } = require("googleapis");
 
 const youtube = google.youtube({
   version: "v3",
-  auth: "AIzaSyA-EHLvPYpJehvaHkrDmfIr21A0cUWtX6A"
+  auth: process.env.YOUTUBE_API_KEY
 });
 
 // a very simple example of searching for youtube videos
