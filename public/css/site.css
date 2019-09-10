@@ -31,6 +31,7 @@ a {
   color: var(--color-snow);
   border-radius: 25px;
   border: 2px solid var(--green-color);
+  cursor: pointer;
 }
 
 .blue {
@@ -174,4 +175,101 @@ a .option:hover {
     background-color: black;
     color: white;
   }
+}
+
+/* Login and Sign Up */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.input-title {
+  padding: 1rem;
+}
+
+.input-form {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+#login {
+  margin: auto;
+  font-family: "Chilanka", cursive;
+  color: black;
+  font-size: 1rem;
+}
+
+#auth-page {
+  justify-content: space-between;
+  padding: 5rem;
+}
+
+/* bar */
+.bar {
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.bar:hover {
+  color: white;
+  background: black;
+}
+.big {
+  font-size: 2rem;
+}
+
+/* tracker page */
+.cool-input {
+  width: 60%;
+  height: 30px;
+  margin: 2rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+.card {
+  margin: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  padding: 2rem;
+}
+
+.black {
+  color: black;
+  margin: auto;
+}
+
+/* Watch */
+.viewport {
+  width: 70%;
+  padding: 2rem;
+}
+iframe {
+  margin: auto;
+}
+.video-title {
+  margin-top: 20px;
+}
+
+.favorite-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: auto;
+  background: #efc93d;
 }

@@ -1,26 +1,23 @@
-<h1>Hello {{username}}</h1>
-<div class="search">
+<div class="container">
+  <h1 class="input-title">Hello {{username}}</h1>
   <h1>Search for Video</h1>
   <form id="messageForm" method="post">
-    <label>
-      <input id="message" name="message">
-    </label>
+    <input class="cool-input" id="message" name="message" placeholder="Search Youtube">
     <br>
   </form>
+  <div id="searchResults">
+
+  </div>
+
+  {{#if vidId}}
+  <h2>
+    Recently Watched
+  </h2>
+  <a class="myButton" target="_blank" href="/tracker/watch?vidId={{vidId}}">
+    Watch
+  </a>
+  {{/if}}
 </div>
-<div id="searchResults">
-
-</div>
-
-{{#if vidId}}
-<h2>
-  Recently Watched
-</h2>
-<a class="myButton" target="_blank" href="/tracker/watch?vidId={{vidId}}">
-  Watch
-</a>
-{{/if}}
-
 {{#section 'jquery'}}
 <script>
   $(document).ready(function () {
@@ -36,10 +33,10 @@
       rdiv.html('');
       for (result of data) {
 
-        rdiv.html(rdiv.html() + '<div class="results">' + '<h2>'
-          + result.snippet.title + '</h2>' + '<p>'
+        rdiv.html(rdiv.html() + '<div class="card">' + '<h2>'
+          + result.snippet.title + '</h2>' + '<p class="description">'
           + result.snippet.description + '</p>'
-          + '<a class="myButton" href="tracker/watch?vidId='
+          + '<a class="button inverted black" href="tracker/watch?vidId='
           + result.id.videoId + '&title=' + result.snippet.title + '">' + "Watch" + '</a>' + '</div>');
 
       }

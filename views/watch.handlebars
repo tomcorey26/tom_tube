@@ -1,19 +1,22 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-{{#if query.vidId}}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/{{query.vidId}}" frameborder="0"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<h2 id="theTitle">
-  {{query.title}}
-</h2>
-<form id="submitFavorite" action="post">
-  <button type="submit" id="favorite">Favorite <i class="fas fa-star"></i></button>
-</form>
+<div class="container viewport">
 
-</form>
-{{else}}
-<h1>Video not found</h1>
-{{/if}}
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  {{#if query.vidId}}
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/{{query.vidId}}" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <h2 class="video-title">
+    {{query.title}}
+  </h2>
+  <form id="submitFavorite" action="post">
+    <button class="favorite-button" type="submit" id="favorite">Favorite &nbsp;<i class="fas fa-star"></i></button>
+  </form>
+
+  </form>
+  {{else}}
+  <h1>Video not found</h1>
+  {{/if}}
+</div>
 
 {{#section 'jquery'}}
 <script>

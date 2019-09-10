@@ -24,15 +24,22 @@
       <a href="/favorites">
         <div class="option">Favorites</div>
       </a>
+      {{#if username}}
+      <a class="logout" href="/logout">
+        <div class="option">Sign Out</div>
+      </a>
+      {{else}}
+      <a class="logout" href="/tracker">
+        <div class="option">Sign In</div>
+      </a>
+      {{/if}}
     </div>
   </div>
   <div class="main-container">
     <div class="content">
       {{{body}}}
     </div>
-    {{#if username}}
-    <h3><a class="logout" href="/logout">logout</a></h3>
-    {{/if}}
+
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"

@@ -1,16 +1,19 @@
-<h1>Sign up for Day Tracker</h1>
-<form id="form_newuser" method="post">
-  <label for="username">Desired username:</label>
-  <input id="username" name="username" required><br>
-  <label for="email">Email address:</label>
-  <input id="email" type="email" required name="email"><br>
-  <label for="password">Password:</label>
-  <input id="password" type="password" name="password" autocomplete="new-password" required><br>
-  <label for="password2">Password again:</label>
-  <input id="password2" type="password" name="password2" autocomplete="new-password" required><br>
-  <span id="passwordError">Passwords do not match</span><br>
-  <input type="submit" value="Sign up!">
-</form>
+<div class="container">
+  <h1 class="input-title">Create Account</h1>
+  <form id="input-form" method="post">
+    <label for="username">Desired username:</label>
+    <input id="username" name="username" required><br>
+    <label for="email">Email address:</label>
+    <input id="email" type="email" required name="email"><br>
+    <label for="password">Password:</label>
+    <input id="password" type="password" name="password" autocomplete="new-password" required><br>
+    <label for="password2">Password again:</label>
+    <input id="password2" type="password" name="password2" autocomplete="new-password" required><br>
+    <span id="passwordError">Passwords do not match</span><br>
+    <input id='login' class='button inverted' type="submit" value="Sign up!">
+  </form>
+  <br>
+</div>
 
 {{#section 'jquery'}}
 <script>
