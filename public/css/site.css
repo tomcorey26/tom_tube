@@ -1,7 +1,8 @@
 :root {
   --main-bg-color: #c2c8cc;
-  --main-page-color: #337fbd;
-  --main-txt-color: white;
+  --main-color: #083d77;
+  --secondary-txt-color: #ebebd3;
+  --green-color: #73ad21;
   --color-snow: #ffffff;
 }
 
@@ -27,7 +28,13 @@ a {
   align-items: center;
   width: 100px;
   height: 50px;
-  background-color: #337fbd;
+  color: var(--color-snow);
+  border-radius: 25px;
+  border: 2px solid var(--green-color);
+}
+
+.blue {
+  color: var(--green-color);
 }
 
 /* Nav Bar */
@@ -48,14 +55,13 @@ a {
   height: 100%;
   display: flex;
   justify-content: flex-end;
-  margin-right: 10px;
 }
 
 .nav-container .option {
   padding: 20px 20px;
 }
 
-.option a:hover {
+a .option:hover {
   opacity: 0.6;
 }
 
@@ -91,4 +97,81 @@ a {
   color: white;
   display: flex;
   justify-content: space-between;
+}
+
+.button:hover {
+  transition: 1s;
+  background-color: var(--green-color);
+}
+
+.button.inverted {
+  background-color: var(--green-color);
+}
+
+.button.inverted:hover {
+  background-color: transparent;
+}
+
+/* ROW DISPLAY */
+
+.row {
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.row .row-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 0 0 33%;
+  line-height: 2;
+}
+
+.row .row-title {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+.row .row-text {
+  color: grey;
+}
+
+@media only screen and (max-width: 768px) {
+  /* bottom row */
+  .row {
+    flex-direction: column;
+  }
+  .row-item {
+    margin-top: 3rem;
+  }
+
+  /* Showcase */
+  .showcase .buttons {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .buttons .button {
+    margin-top: 1rem;
+    width: 200px;
+  }
+
+  /* Nav */
+  .nav-container {
+    flex-direction: column;
+  }
+  .nav-container .options {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  a .option:hover {
+    background-color: black;
+    color: white;
+  }
 }
