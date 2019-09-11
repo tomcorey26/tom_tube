@@ -259,17 +259,34 @@ iframe {
   margin: auto;
 }
 .video-title {
-  margin-top: 20px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .favorite-button {
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100px;
   height: 50px;
-  border-radius: 25px;
   cursor: pointer;
   margin: auto;
   background: #efc93d;
+  padding: 1rem;
+}
+
+.favorite-button:hover {
+  background: transparent;
+  border: 1px solid #efc93d;
+}
+
+.favorite-button:disabled:hover {
+  cursor: not-allowed;
+  background: #efc93d;
+  border: none;
+}
+
+.fav-title {
+  margin-bottom: 1rem;
 }

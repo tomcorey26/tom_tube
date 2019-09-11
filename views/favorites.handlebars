@@ -1,6 +1,8 @@
-<h1>Favorites</h1>
-<div id="favorites">
+<div class="container">
+  <h1 class="input-title bottom">Favorites</h1>
+  <div id="favorites">
 
+  </div>
 </div>
 {{#section 'jquery'}}
 <script>
@@ -10,10 +12,10 @@
       rdiv.html('');
       data.favorites.forEach(function (element) {
         console.log(element)
-        rdiv.html(rdiv.html() + '<div class="results">' + '<h2>'
+        rdiv.html(rdiv.html() + '<div class="card">' + '<h2 class="fav-title">'
           + element.title + '</h2>'
-          + '<a class="myButton" href='
-          + element.url + '">' + "Watch" + '</a>' + '</div>');
+          + '<a class="button inverted black" href='
+          + element.url + '">' + "Watch" + '</a>' + '</div>' + '<br>');
       });
 
     });
